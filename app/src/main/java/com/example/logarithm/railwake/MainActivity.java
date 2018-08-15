@@ -1,5 +1,6 @@
 package com.example.logarithm.railwake;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     void pnrStatus(View view){
-        Log.i("Result","PNR CLICK");
-        Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getApplicationContext(),PnrStatus.class));
+
 
     }
 
