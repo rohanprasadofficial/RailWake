@@ -6,17 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".PnrStatus">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="187dp"
-        android:layout_height="204dp"
-        android:layout_marginBottom="360dp"
-        android:layout_marginEnd="213dp"
-        android:layout_marginStart="138dp"
-        android:layout_marginTop="131dp"
-        android:text="Hello"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <EditText
+        android:id="@+id/pnrTextBar"
+        android:layout_width="301dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="116dp"
+        android:ems="10"
+        android:hint="Enter PNR Number"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/getStatus"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/getStatus"
+        style="@android:style/Widget.Holo.Button.Toggle"
+        android:layout_width="239dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="296dp"
+        android:layout_marginEnd="67dp"
+        android:layout_marginStart="82dp"
+        android:fontFamily="casual"
+        android:text="Get Status"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pnrTextBar" />
 </android.support.constraint.ConstraintLayout>
