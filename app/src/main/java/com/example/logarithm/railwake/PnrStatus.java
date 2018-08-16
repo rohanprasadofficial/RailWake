@@ -18,15 +18,15 @@ public class PnrStatus extends AppCompatActivity {
 
     JSONDownloader task;
     String json;
-    TextView Pnr,dateOfJourney,dateOfJourneyText,chartPreparedText;
-    String PnrNumber,DOJ,fromStationName,fromStationCode,toStationName,toStationCode,BoardingPointName,BoardingPointCode,reservationUptoName,reservationUptoCode,trainName,trainNumber,journeyClassName,journeyClassCode;
-    int response_code,total_passenger;
+    TextView Pnr,dateOfJourney,dateOfJourneyText,chartPreparedText,startingStationName,startingStationCode,startingStationCodeText,startingStationNameText;
+    String PnrNumber,DOJ,fromStationName,fromStationCode,toStationName,toStationCode,boardingPointName,boardingPointCode,reservationUptoName,reservationUptoCode,trainName,journeyClassName,journeyClassCode;
+    int response_code,total_passenger,trainNumber;
     boolean chartPrepared;
 
 
 
     public void GetStatus(View view){
-        if(Pnr==null){
+        if(Pnr.length()<1){
             Toast.makeText(this, "Please Enter PNR Number", Toast.LENGTH_SHORT).show();
         }
         else {
@@ -100,6 +100,31 @@ public class PnrStatus extends AppCompatActivity {
                     }
                     DOJ=jsonObject.getString("doj");
                     JSONObject fromStation=jsonObject.getJSONObject("from_station");
+                    JSONObject toStation=jsonObject.getJSONObject("to_station");
+                    JSONObject boardingPoint=jsonObject.getJSONObject("boarding_point");
+                    JSONObject reservationUpto=jsonObject.getJSONObject("reservation_upto");
+                    JSONObject train=jsonObject.getJSONObject("train");
+                    JSONObject journeyClass=jsonObject.getJSONObject("journey_class");
+                    fromStationName=fromStation.getString("name");
+                    fromStationCode=fromStation.getString("code");
+                    toStationName=toStation.getString("name");
+                    toStationCode=toStation.getString("code");
+                    boardingPointName=boardingPoint.getString("name");
+                    boardingPointCode=boardingPoint.getString("code");
+                    reservationUptoName=reservationUpto.getString("name");
+                    reservationUptoCode=reservationUpto.getString("code");
+                    trainName=train.getString("name");
+                    trainNumber=train.getInt("number");
+                    journeyClassName=journeyClass.getString("name");
+                    journeyClassCode=journeyClass.getString("code");
+                    startingStationName.setText("      Station  Name : ");
+                    startingStationCode.setText("      Station Code :");
+                    startingStationNameText.setText(fromStationName);
+                    startingStationCodeText.setText(fromStationCode);
+
+
+
+
 
                     dateOfJourney.setVisibility(View.VISIBLE);
                     dateOfJourneyText.setText(DOJ);
@@ -134,6 +159,11 @@ public class PnrStatus extends AppCompatActivity {
         dateOfJourney=findViewById(R.id.dateOfJourney);
         dateOfJourneyText=findViewById(R.id.dateOfJourneyText);
         chartPreparedText=findViewById(R.id.chartPrepared);
+        startingStationName=findViewById(R.id.startingStationName);
+        startingStationCode=findViewById(R.id.startingStationCode);
+        startingStationCodeText=findViewById(R.id.startingStationCodeText);
+        startingStationNameText=findViewById(R.id.startingStationNameText);
+
 
 
 
