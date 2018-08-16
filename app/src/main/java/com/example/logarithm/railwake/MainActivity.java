@@ -17,7 +17,7 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
-     static final String  API_KEY = "y5jg5qw00g";
+    static final String  API_KEY = "y5jg5qw00g";
     JSONDownloader task;
     String  json=null;
     CardView pnrCardView;
@@ -25,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
     void pnrStatus(View view){
         startActivity(new Intent(getApplicationContext(),PnrStatus.class));
-
-
     }
 
 

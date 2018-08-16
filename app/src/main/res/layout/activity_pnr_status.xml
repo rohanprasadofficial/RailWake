@@ -43,4 +43,59 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pnrTextBar" />
+
+    <TextView
+        android:id="@+id/dateOfJourney"
+        android:layout_width="156dp"
+        android:layout_height="29dp"
+        android:layout_marginBottom="322dp"
+        android:layout_marginEnd="220dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="76dp"
+        android:fontFamily="casual"
+        android:text="Date of Journey  :"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/getStatus" />
+
+    <TextView
+        android:id="@+id/dateOfJourneyText"
+        android:layout_width="204dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="323dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="76dp"
+        android:fontFamily="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dateOfJourney"
+        app:layout_constraintTop_toBottomOf="@+id/getStatus" />
+
+    <TextView
+        android:id="@+id/chartPrepared"
+        android:layout_width="179dp"
+        android:layout_height="22dp"
+        android:layout_marginBottom="27dp"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/holo_green_light"
+        android:fontFamily="casual"
+
+
+        android:text="Chart Prepared"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/dateOfJourney"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/getStatus" />
 </android.support.constraint.ConstraintLayout>

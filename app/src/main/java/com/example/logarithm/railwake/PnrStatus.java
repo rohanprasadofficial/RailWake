@@ -1,5 +1,6 @@
 package com.example.logarithm.railwake;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,7 +18,7 @@ public class PnrStatus extends AppCompatActivity {
 
     JSONDownloader task;
     String json;
-    TextView Pnr;
+    TextView Pnr,dateOfJourney,dateOfJourneyText,chartPreparedText;
     String PnrNumber,DOJ,fromStationName,fromStationCode,toStationName,toStationCode,BoardingPointName,BoardingPointCode,reservationUptoName,reservationUptoCode,trainName,trainNumber,journeyClassName,journeyClassCode;
     int response_code,total_passenger;
     boolean chartPrepared;
@@ -87,26 +88,27 @@ public class PnrStatus extends AppCompatActivity {
                 response_code=jsonObject.getInt("response_code");
                 if(response_code==200){
                     //Code for Parsing Details
-
+                    chartPreparedText.setVisibility(View.VISIBLE);
                     chartPrepared=jsonObject.getBoolean("chart_prepared");
+                    if(chartPrepared){
+                    chartPreparedText.setBackgroundColor(Color.parseColor("#0be881"));
+                    chartPreparedText.setText("Chart Prepared");
+                    }
+                    else{
+                        chartPreparedText.setBackgroundColor(Color.parseColor("#e74c3c"));
+                        chartPreparedText.setText("Chart Not Prepared");
+                    }
                     DOJ=jsonObject.getString("doj");
                     JSONObject fromStation=jsonObject.getJSONObject("from_station");
-                    Log.i("Response  Code",String.valueOf(response_code));
-                    Log.i("chardfvffsdf",String.valueOf(chartPrepared));
-                    Log.i("DOJ",DOJ);
+
+                    dateOfJourney.setVisibility(View.VISIBLE);
+                    dateOfJourneyText.setText(DOJ);
 
 
 
 
 
-
-
-
-
-
-
-
-                }
+                    }
                 else if(response_code==221){
                     Toast.makeText(this, "Invalid PNR", Toast.LENGTH_SHORT).show();
                 }
@@ -129,6 +131,11 @@ public class PnrStatus extends AppCompatActivity {
         Pnr=findViewById(R.id.pnrTextBar);
 
         task=new JSONDownloader();
+        dateOfJourney=findViewById(R.id.dateOfJourney);
+        dateOfJourneyText=findViewById(R.id.dateOfJourneyText);
+        chartPreparedText=findViewById(R.id.chartPrepared);
+
+
 
 
 
