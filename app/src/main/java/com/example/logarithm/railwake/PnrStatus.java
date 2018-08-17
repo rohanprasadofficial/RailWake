@@ -18,7 +18,7 @@ public class PnrStatus extends AppCompatActivity {
 
     JSONDownloader task;
     String json;
-    TextView Pnr,dateOfJourney,dateOfJourneyText,chartPreparedText,startingStationName,startingStationCode,startingStationCodeText,startingStationNameText;
+    TextView Pnr,dateOfJourney,dateOfJourneyText,chartPreparedText,startingStationName,startingStationCode,startingStationCodeText,startingStationNameText,destStationName,destStationCode,destStationNameText,destStationCodeText;
     String PnrNumber,DOJ,fromStationName,fromStationCode,toStationName,toStationCode,boardingPointName,boardingPointCode,reservationUptoName,reservationUptoCode,trainName,journeyClassName,journeyClassCode;
     int response_code,total_passenger,trainNumber;
     boolean chartPrepared;
@@ -105,6 +105,7 @@ public class PnrStatus extends AppCompatActivity {
                     JSONObject reservationUpto=jsonObject.getJSONObject("reservation_upto");
                     JSONObject train=jsonObject.getJSONObject("train");
                     JSONObject journeyClass=jsonObject.getJSONObject("journey_class");
+                    dateOfJourneyText.setText(DOJ);
                     fromStationName=fromStation.getString("name");
                     fromStationCode=fromStation.getString("code");
                     toStationName=toStation.getString("name");
@@ -121,6 +122,11 @@ public class PnrStatus extends AppCompatActivity {
                     startingStationCode.setText("      Station Code :");
                     startingStationNameText.setText(fromStationName);
                     startingStationCodeText.setText(fromStationCode);
+                    destStationName.setText("      Station  Name : ");
+                    destStationCode.setText("      Station Code :");
+                    destStationNameText.setText(toStationName);
+                    destStationCodeText.setText(toStationCode);
+
 
 
 
@@ -163,6 +169,11 @@ public class PnrStatus extends AppCompatActivity {
         startingStationCode=findViewById(R.id.startingStationCode);
         startingStationCodeText=findViewById(R.id.startingStationCodeText);
         startingStationNameText=findViewById(R.id.startingStationNameText);
+        destStationName=findViewById(R.id.startingStationName1);
+        destStationCode=findViewById(R.id.startingStationCode1);
+        destStationCodeText=findViewById(R.id.startingStationCodeText1);
+        destStationNameText=findViewById(R.id.startingStationNameText1);
+
 
 
 

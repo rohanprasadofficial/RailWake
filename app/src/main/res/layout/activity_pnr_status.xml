@@ -67,10 +67,12 @@
         android:id="@+id/dateOfJourneyText"
         android:layout_width="204dp"
         android:layout_height="24dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="76dp"
         android:fontFamily="monospace"
+        app:layout_constraintBottom_toTopOf="@+id/StartingStationDetails"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/dateOfJourney"
@@ -101,7 +103,7 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/StartingStationDetails"
         android:layout_width="362dp"
-        android:layout_height="87dp"
+        android:layout_height="133dp"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:background="#00d2d3"
@@ -111,7 +113,8 @@
         <TextView
             android:id="@+id/ssd"
             android:layout_width="362dp"
-            android:layout_height="23dp"
+            android:layout_height="31dp"
+            android:layout_marginBottom="3dp"
             android:background="#222f3e"
             android:fontFamily="casual"
             android:text="Starting Station Details"
@@ -119,7 +122,11 @@
             android:textColor="#feca57"
             android:textSize="14sp"
             android:textStyle="bold"
-            tools:layout_editor_absoluteY="0dp" />
+            app:layout_constraintBottom_toTopOf="@+id/startingStationName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/startingStationName"
@@ -140,10 +147,10 @@
         <TextView
             android:id="@+id/startingStationCode"
             android:layout_width="151dp"
-            android:layout_height="26dp"
-            android:layout_marginBottom="5dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="16dp"
             android:layout_marginEnd="225dp"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="19dp"
             android:fontFamily="sans-serif-smallcaps"
             android:textAlignment="viewStart"
             android:textColor="#576574"
@@ -151,16 +158,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ssd"
-            app:layout_constraintVertical_bias="0.935" />
+            app:layout_constraintTop_toBottomOf="@+id/startingStationName" />
 
         <TextView
             android:id="@+id/startingStationNameText"
             android:layout_width="204dp"
-            android:layout_height="28dp"
+            android:layout_height="32dp"
             android:layout_marginEnd="9dp"
             android:layout_marginTop="1dp"
             android:textColor="#222f3e"
+            app:layout_constraintBottom_toTopOf="@+id/startingStationCodeText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/startingStationName"
             app:layout_constraintTop_toBottomOf="@+id/ssd" />
@@ -182,9 +189,9 @@
 
     </android.support.constraint.ConstraintLayout>
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/DesStationDetails1"
+        android:id="@+id/StartingStationDetails1"
         android:layout_width="362dp"
-        android:layout_height="87dp"
+        android:layout_height="133dp"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:background="#00d2d3"
@@ -194,7 +201,8 @@
         <TextView
             android:id="@+id/ssd1"
             android:layout_width="362dp"
-            android:layout_height="23dp"
+            android:layout_height="31dp"
+            android:layout_marginBottom="3dp"
             android:background="#222f3e"
             android:fontFamily="casual"
             android:text="Destination Station Details"
@@ -202,7 +210,11 @@
             android:textColor="#feca57"
             android:textSize="14sp"
             android:textStyle="bold"
-            tools:layout_editor_absoluteY="0dp" />
+            app:layout_constraintBottom_toTopOf="@+id/startingStationName1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/startingStationName1"
@@ -223,10 +235,10 @@
         <TextView
             android:id="@+id/startingStationCode1"
             android:layout_width="151dp"
-            android:layout_height="26dp"
-            android:layout_marginBottom="5dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="16dp"
             android:layout_marginEnd="225dp"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="19dp"
             android:fontFamily="sans-serif-smallcaps"
             android:textAlignment="viewStart"
             android:textColor="#576574"
@@ -234,18 +246,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ssd1"
-            app:layout_constraintVertical_bias="0.935" />
+            app:layout_constraintTop_toBottomOf="@+id/startingStationName1" />
 
         <TextView
             android:id="@+id/startingStationNameText1"
             android:layout_width="204dp"
-            android:layout_height="28dp"
+            android:layout_height="32dp"
             android:layout_marginEnd="9dp"
             android:layout_marginTop="1dp"
             android:textColor="#222f3e"
+            app:layout_constraintBottom_toTopOf="@+id/startingStationCodeText1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/DesStationDetails1"
+            app:layout_constraintStart_toEndOf="@+id/startingStationName1"
             app:layout_constraintTop_toBottomOf="@+id/ssd1" />
 
         <TextView
@@ -264,5 +276,6 @@
 
 
     </android.support.constraint.ConstraintLayout>
+
 
 </android.support.constraint.ConstraintLayout>
