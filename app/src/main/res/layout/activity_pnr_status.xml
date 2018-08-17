@@ -1,281 +1,671 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PnrStatus">
 
-    <EditText
-        android:id="@+id/pnrTextBar"
-        android:layout_width="301dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:hint="Enter PNR Number"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/getStatus"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".PnrStatus"
+        android:id="@+id/cons">
 
-    <Button
-        android:id="@+id/getStatus"
-        style="@android:style/Widget.Holo.Button.Toggle"
-        android:layout_width="239dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="403dp"
-        android:layout_marginEnd="67dp"
-        android:layout_marginStart="82dp"
-        android:layout_marginTop="2dp"
-        android:fontFamily="casual"
-        android:onClick="GetStatus"
-        android:text="Get Status"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pnrTextBar" />
-
-    <TextView
-        android:id="@+id/dateOfJourney"
-        android:layout_width="156dp"
-        android:layout_height="29dp"
-        android:layout_marginBottom="322dp"
-        android:layout_marginEnd="220dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="76dp"
-        android:fontFamily="casual"
-        android:text="Date of Journey  :"
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_red_light"
-        android:textSize="18sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/getStatus" />
-
-    <TextView
-        android:id="@+id/dateOfJourneyText"
-        android:layout_width="204dp"
-        android:layout_height="24dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="76dp"
-        android:fontFamily="monospace"
-        app:layout_constraintBottom_toTopOf="@+id/StartingStationDetails"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/dateOfJourney"
-        app:layout_constraintTop_toBottomOf="@+id/getStatus" />
-
-    <TextView
-        android:id="@+id/chartPrepared"
-        android:layout_width="179dp"
-        android:layout_height="22dp"
-        android:layout_marginBottom="27dp"
-        android:layout_marginTop="15dp"
-        android:background="@android:color/holo_green_light"
-        android:fontFamily="casual"
-
-
-        android:text="Chart Prepared"
-        android:textAlignment="center"
-        android:textColor="@android:color/background_dark"
-        android:textStyle="bold"
-        android:typeface="monospace"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/dateOfJourney"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/getStatus" />
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/StartingStationDetails"
-        android:layout_width="362dp"
-        android:layout_height="133dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#00d2d3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateOfJourney">
-
-        <TextView
-            android:id="@+id/ssd"
-            android:layout_width="362dp"
-            android:layout_height="31dp"
-            android:layout_marginBottom="3dp"
-            android:background="#222f3e"
-            android:fontFamily="casual"
-            android:text="Starting Station Details"
+        <EditText
+            android:id="@+id/pnrTextBar"
+            android:layout_width="301dp"
+            android:layout_height="43dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="255dp"
+            android:ems="10"
+            android:hint="Enter PNR Number"
+            android:inputType="textPersonName"
             android:textAlignment="center"
-            android:textColor="#feca57"
             android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/startingStationName"
+            app:layout_constraintBottom_toTopOf="@+id/getStatus"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.626"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/startingStationName"
-            android:layout_width="150dp"
-            android:layout_height="25dp"
-            android:layout_marginBottom="65dp"
-            android:layout_marginEnd="212dp"
-            android:layout_marginTop="3dp"
-            android:fontFamily="sans-serif-smallcaps"
-            android:textAlignment="viewStart"
-            android:textColor="#576574"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <Button
+            android:id="@+id/getStatus"
+            style="@android:style/Widget.Holo.Button.Toggle"
+            android:layout_width="239dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="34dp"
+            android:layout_marginEnd="72dp"
+            android:layout_marginStart="73dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="casual"
+            android:onClick="GetStatus"
+            android:text="Get Status"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/chartPrepared"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ssd"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/pnrTextBar" />
 
         <TextView
-            android:id="@+id/startingStationCode"
-            android:layout_width="151dp"
-            android:layout_height="30dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginEnd="225dp"
-            android:layout_marginTop="19dp"
-            android:fontFamily="sans-serif-smallcaps"
-            android:textAlignment="viewStart"
-            android:textColor="#576574"
+            android:id="@+id/dateOfJourney"
+            android:layout_width="156dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="10dp"
+            android:fontFamily="casual"
+            android:text="Date of Journey  :"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/dateOfJourneyText"
+            app:layout_constraintEnd_toStartOf="@+id/dateOfJourneyText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chartPrepared" />
+
+        <TextView
+            android:id="@+id/dateOfJourneyText"
+            android:layout_width="204dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="monospace"
+            app:layout_constraintBottom_toTopOf="@+id/StartingStationDetails0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/dateOfJourney"
+            app:layout_constraintTop_toBottomOf="@+id/chartPrepared"
+            app:layout_constraintVertical_bias="0.044" />
+
+        <TextView
+            android:id="@+id/chartPrepared"
+            android:layout_width="179dp"
+            android:layout_height="27dp"
+
+
+            android:layout_marginEnd="189dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/holo_green_light"
+            android:fontFamily="casual"
+            android:text="Chart Prepared"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textStyle="bold"
+            android:typeface="monospace"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/dateOfJourney"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/StartingStationDetails0"
+            android:layout_width="362dp"
+            android:layout_height="133dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginStart="16dp"
+            android:background="#00d2d3"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/StartingStationDetails"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dateOfJourney">
+
+            <TextView
+                android:id="@+id/ssd0"
+                android:layout_width="362dp"
+                android:layout_height="28dp"
+                android:layout_marginBottom="3dp"
+                android:background="#222f3e"
+                android:fontFamily="casual"
+                android:text="Train Details"
+                android:textAlignment="center"
+                android:textColor="#feca57"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/startingStationName0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/startingStationName0"
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:layout_marginBottom="65dp"
+                android:layout_marginEnd="212dp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textAlignment="viewStart"
+                android:textColor="#576574"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ssd0"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/startingStationCode0"
+                android:layout_width="151dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="225dp"
+                android:layout_marginTop="19dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textAlignment="viewStart"
+                android:textColor="#576574"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/startingStationName0" />
+
+            <TextView
+                android:id="@+id/startingStationNameText0"
+                android:layout_width="204dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginTop="1dp"
+                android:textColor="#222f3e"
+                app:layout_constraintBottom_toTopOf="@+id/startingStationCodeText0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/startingStationName0"
+                app:layout_constraintTop_toBottomOf="@+id/ssd0" />
+
+            <TextView
+                android:id="@+id/startingStationCodeText0"
+                android:layout_width="203dp"
+                android:layout_height="32dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="1dp"
+                android:textColor="#222f3e"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/startingStationCode0"
+                app:layout_constraintTop_toBottomOf="@+id/startingStationNameText0" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/StartingStationDetails"
+            android:layout_width="362dp"
+            android:layout_height="133dp"
+            android:layout_marginBottom="25dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="8dp"
+            android:background="#00d2d3"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/StartingStationDetails1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/StartingStationDetails0">
+
+            <TextView
+                android:id="@+id/ssd"
+                android:layout_width="362dp"
+                android:layout_height="31dp"
+                android:layout_marginBottom="3dp"
+                android:background="#222f3e"
+                android:fontFamily="casual"
+                android:text="Train Starting Station Details"
+                android:textAlignment="center"
+                android:textColor="#feca57"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/startingStationName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/startingStationName"
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:layout_marginBottom="65dp"
+                android:layout_marginEnd="212dp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textAlignment="viewStart"
+                android:textColor="#576574"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ssd"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/startingStationCode"
+                android:layout_width="151dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="225dp"
+                android:layout_marginTop="19dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textAlignment="viewStart"
+                android:textColor="#576574"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/startingStationName" />
+
+            <TextView
+                android:id="@+id/startingStationNameText"
+                android:layout_width="204dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginTop="1dp"
+                android:textColor="#222f3e"
+                app:layout_constraintBottom_toTopOf="@+id/startingStationCodeText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/startingStationName"
+                app:layout_constraintTop_toBottomOf="@+id/ssd" />
+
+            <TextView
+                android:id="@+id/startingStationCodeText"
+                android:layout_width="203dp"
+                android:layout_height="32dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="1dp"
+                android:textColor="#222f3e"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/startingStationCode"
+                app:layout_constraintTop_toBottomOf="@+id/startingStationNameText" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/StartingStationDetails1"
+            android:layout_width="362dp"
+            android:layout_height="133dp"
+            android:layout_marginBottom="21dp"
+            android:layout_marginEnd="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="25dp"
+            android:background="#00d2d3"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/StartingStationDetails2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/StartingStationDetails">
+
+            <TextView
+                android:id="@+id/ssd1"
+                android:layout_width="362dp"
+                android:layout_height="31dp"
+                android:layout_marginBottom="3dp"
+                android:background="#222f3e"
+                android:fontFamily="casual"
+                android:text="Train Destination Station Details"
+                android:textAlignment="center"
+                android:textColor="#feca57"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/startingStationName1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/startingStationName1"
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:layout_marginBottom="65dp"
+                android:layout_marginEnd="212dp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textAlignment="viewStart"
+                android:textColor="#576574"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ssd1"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/startingStationCode1"
+                android:layout_width="151dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="225dp"
+                android:layout_marginTop="19dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textAlignment="viewStart"
+                android:textColor="#576574"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/startingStationName1" />
+
+            <TextView
+                android:id="@+id/startingStationNameText1"
+                android:layout_width="204dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginTop="1dp"
+                android:textColor="#222f3e"
+                app:layout_constraintBottom_toTopOf="@+id/startingStationCodeText1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/startingStationName1"
+                app:layout_constraintTop_toBottomOf="@+id/ssd1" />
+
+            <TextView
+                android:id="@+id/startingStationCodeText1"
+                android:layout_width="203dp"
+                android:layout_height="32dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="1dp"
+                android:textColor="#222f3e"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/startingStationCode1"
+                app:layout_constraintTop_toBottomOf="@+id/startingStationNameText1" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/StartingStationDetails2"
+            android:layout_width="362dp"
+            android:layout_height="133dp"
+            android:layout_marginBottom="13dp"
+            android:layout_marginEnd="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="8dp"
+            android:background="#00d2d3"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/StartingStationDetails3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/StartingStationDetails1">
+
+            <TextView
+                android:id="@+id/ssd2"
+                android:layout_width="362dp"
+                android:layout_height="31dp"
+                android:layout_marginBottom="3dp"
+                android:background="#222f3e"
+                android:fontFamily="casual"
+                android:text="Customer Boarding Station Details"
+                android:textAlignment="center"
+                android:textColor="#feca57"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/startingStationName2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/startingStationName2"
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:layout_marginBottom="65dp"
+                android:layout_marginEnd="212dp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textAlignment="viewStart"
+                android:textColor="#576574"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ssd2"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/startingStationCode2"
+                android:layout_width="151dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="225dp"
+                android:layout_marginTop="19dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textAlignment="viewStart"
+                android:textColor="#576574"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/startingStationName2" />
+
+            <TextView
+                android:id="@+id/startingStationNameText2"
+                android:layout_width="204dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginTop="1dp"
+                android:textColor="#222f3e"
+                app:layout_constraintBottom_toTopOf="@+id/startingStationCodeText2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/startingStationName2"
+                app:layout_constraintTop_toBottomOf="@+id/ssd2" />
+
+            <TextView
+                android:id="@+id/startingStationCodeText2"
+                android:layout_width="203dp"
+                android:layout_height="32dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="1dp"
+                android:textColor="#222f3e"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/startingStationCode2"
+                app:layout_constraintTop_toBottomOf="@+id/startingStationNameText2" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/StartingStationDetails3"
+            android:layout_width="362dp"
+            android:layout_height="133dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="2dp"
+            android:background="#00d2d3"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/StartingStationDetails4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/StartingStationDetails2">
+
+            <TextView
+                android:id="@+id/ssd3"
+                android:layout_width="362dp"
+                android:layout_height="31dp"
+                android:layout_marginBottom="3dp"
+                android:background="#222f3e"
+                android:fontFamily="casual"
+                android:text="Customer Destination Station Details"
+                android:textAlignment="center"
+                android:textColor="#feca57"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/startingStationName3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/startingStationName3"
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:layout_marginBottom="65dp"
+                android:layout_marginEnd="212dp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textAlignment="viewStart"
+                android:textColor="#576574"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ssd3"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/startingStationCode3"
+                android:layout_width="151dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="225dp"
+                android:layout_marginTop="19dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textAlignment="viewStart"
+                android:textColor="#576574"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/startingStationName3" />
+
+            <TextView
+                android:id="@+id/startingStationNameText3"
+                android:layout_width="204dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginTop="1dp"
+                android:textColor="#222f3e"
+                app:layout_constraintBottom_toTopOf="@+id/startingStationCodeText3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/startingStationName3"
+                app:layout_constraintTop_toBottomOf="@+id/ssd3" />
+
+            <TextView
+                android:id="@+id/startingStationCodeText3"
+                android:layout_width="203dp"
+                android:layout_height="32dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="1dp"
+                android:textColor="#222f3e"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/startingStationCode3"
+                app:layout_constraintTop_toBottomOf="@+id/startingStationNameText3" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/StartingStationDetails4"
+            android:layout_width="362dp"
+            android:layout_height="133dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="8dp"
+            android:background="#00d2d3"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/startingStationName" />
+            app:layout_constraintTop_toBottomOf="@+id/StartingStationDetails3"
+            app:layout_constraintVertical_bias="0.0">
 
-        <TextView
-            android:id="@+id/startingStationNameText"
-            android:layout_width="204dp"
-            android:layout_height="32dp"
-            android:layout_marginEnd="9dp"
-            android:layout_marginTop="1dp"
-            android:textColor="#222f3e"
-            app:layout_constraintBottom_toTopOf="@+id/startingStationCodeText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/startingStationName"
-            app:layout_constraintTop_toBottomOf="@+id/ssd" />
+            <TextView
+                android:id="@+id/ssd4"
+                android:layout_width="362dp"
+                android:layout_height="31dp"
+                android:layout_marginBottom="3dp"
+                android:background="#222f3e"
+                android:fontFamily="casual"
+                android:text="Customer Boarding Station Details"
+                android:textAlignment="center"
+                android:textColor="#feca57"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/startingStationName4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/startingStationCodeText"
-            android:layout_width="203dp"
-            android:layout_height="32dp"
-            android:layout_marginBottom="6dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginTop="1dp"
-            android:textColor="#222f3e"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/startingStationCode"
-            app:layout_constraintTop_toBottomOf="@+id/startingStationNameText" />
+            <TextView
+                android:id="@+id/startingStationName4"
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:layout_marginBottom="65dp"
+                android:layout_marginEnd="212dp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textAlignment="viewStart"
+                android:textColor="#576574"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ssd4"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/startingStationCode4"
+                android:layout_width="151dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="225dp"
+                android:layout_marginTop="19dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textAlignment="viewStart"
+                android:textColor="#576574"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/startingStationName4" />
+
+            <TextView
+                android:id="@+id/startingStationNameText4"
+                android:layout_width="204dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginTop="1dp"
+                android:textColor="#222f3e"
+                app:layout_constraintBottom_toTopOf="@+id/startingStationCodeText4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/startingStationName4"
+                app:layout_constraintTop_toBottomOf="@+id/ssd4" />
+
+            <TextView
+                android:id="@+id/startingStationCodeText4"
+                android:layout_width="203dp"
+                android:layout_height="32dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="1dp"
+                android:textColor="#222f3e"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/startingStationCode4"
+                app:layout_constraintTop_toBottomOf="@+id/startingStationNameText4" />
 
 
-    </android.support.constraint.ConstraintLayout>
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/StartingStationDetails1"
-        android:layout_width="362dp"
-        android:layout_height="133dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#00d2d3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/StartingStationDetails">
-
-        <TextView
-            android:id="@+id/ssd1"
-            android:layout_width="362dp"
-            android:layout_height="31dp"
-            android:layout_marginBottom="3dp"
-            android:background="#222f3e"
-            android:fontFamily="casual"
-            android:text="Destination Station Details"
-            android:textAlignment="center"
-            android:textColor="#feca57"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/startingStationName1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/startingStationName1"
-            android:layout_width="150dp"
-            android:layout_height="25dp"
-            android:layout_marginBottom="65dp"
-            android:layout_marginEnd="212dp"
-            android:layout_marginTop="3dp"
-            android:fontFamily="sans-serif-smallcaps"
-            android:textAlignment="viewStart"
-            android:textColor="#576574"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ssd1"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/startingStationCode1"
-            android:layout_width="151dp"
-            android:layout_height="30dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginEnd="225dp"
-            android:layout_marginTop="19dp"
-            android:fontFamily="sans-serif-smallcaps"
-            android:textAlignment="viewStart"
-            android:textColor="#576574"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/startingStationName1" />
-
-        <TextView
-            android:id="@+id/startingStationNameText1"
-            android:layout_width="204dp"
-            android:layout_height="32dp"
-            android:layout_marginEnd="9dp"
-            android:layout_marginTop="1dp"
-            android:textColor="#222f3e"
-            app:layout_constraintBottom_toTopOf="@+id/startingStationCodeText1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/startingStationName1"
-            app:layout_constraintTop_toBottomOf="@+id/ssd1" />
-
-        <TextView
-            android:id="@+id/startingStationCodeText1"
-            android:layout_width="203dp"
-            android:layout_height="32dp"
-            android:layout_marginBottom="6dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginTop="1dp"
-            android:textColor="#222f3e"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/startingStationCode1"
-            app:layout_constraintTop_toBottomOf="@+id/startingStationNameText1" />
+        </android.support.constraint.ConstraintLayout>
 
 
     </android.support.constraint.ConstraintLayout>
-
-
-</android.support.constraint.ConstraintLayout>
+</ScrollView>
