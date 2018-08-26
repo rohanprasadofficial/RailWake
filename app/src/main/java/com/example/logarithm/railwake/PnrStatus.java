@@ -38,8 +38,8 @@ public class PnrStatus extends AppCompatActivity {
         }
         else {
             PnrNumber = Pnr.getText().toString();
-            try { json = task.execute("\"https://api.railwayapi.com/v2/pnr-status/pnr/" + PnrNumber + "/apikey/" + API_KEY + "/\"").get();
-                /*json="{\n" +
+            try {json = task.execute("\"https://api.railwayapi.com/v2/pnr-status/pnr/" + PnrNumber + "/apikey/" + API_KEY + "/\"").get();
+              /*  json="{\n" +
                         "  \"response_code\": 200,\n" +
                         "  \"debit\": 3,\n" +
                         "  \"pnr\": \"1234567890\",\n" +
@@ -117,9 +117,8 @@ public class PnrStatus extends AppCompatActivity {
                     JSONArray passengerArray=jsonObject.getJSONArray("passengers");
                     int noOfPassenger=passengerArray.length();
                     final TextView[] myTextViews = new TextView[noOfPassenger];
-                    int height=myLinearLayout.getLayoutParams().height;
                     for(int i=0;i<noOfPassenger;i++){
-                        myLinearLayout.getLayoutParams().height=myLinearLayout.getLayoutParams().height+200;
+                        myLinearLayout.getLayoutParams().height=myLinearLayout.getLayoutParams().height+100;
                         final TextView rowTextView = new TextView(this);
                         rowTextView.setBackgroundColor(Color.parseColor("#badc58"));
                         rowTextView.setTextColor(Color.parseColor("#130f40"));
@@ -127,7 +126,7 @@ public class PnrStatus extends AppCompatActivity {
                         String passengerNo=passengerDe.getString("no");
                         String currentStatus=passengerDe.getString("current_status");
                         String bookingStatus=passengerDe.getString("booking_status");
-                        rowTextView.setText("Paasenger No : " + passengerNo + "\n" + " Current Status  :" +currentStatus + "\n"+ " Booking Status  :" + bookingStatus +"\n" );
+                        rowTextView.setText("    Passenger No : " + passengerNo + "\n" + "    Current Status  :" +currentStatus + "\n"+ "    Booking Status  :" + bookingStatus +"\n" );
 
                         myLinearLayout.addView(rowTextView);
                         myTextViews[i] = rowTextView;
@@ -186,7 +185,6 @@ public class PnrStatus extends AppCompatActivity {
 
 
 
-
                     }
                 else if(response_code==221){
                     Toast.makeText(this, "Invalid PNR", Toast.LENGTH_SHORT).show();
@@ -195,7 +193,7 @@ public class PnrStatus extends AppCompatActivity {
                     Toast.makeText(this, "Flushed PNR", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Toast.makeText(this, "Something Went Wrong !", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Please check your PNR !", Toast.LENGTH_LONG).show();
                 }
             }catch (Exception   e){
                 Toast.makeText(this, "Something Went  Wrong!", Toast.LENGTH_SHORT).show();
