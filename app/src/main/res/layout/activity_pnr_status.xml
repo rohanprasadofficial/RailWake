@@ -9,10 +9,10 @@
     <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/cons"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".PnrStatus"
-        android:id="@+id/cons">
+        tools:context=".PnrStatus">
 
         <EditText
             android:id="@+id/pnrTextBar"
@@ -481,13 +481,11 @@
             android:id="@+id/StartingStationDetails3"
             android:layout_width="362dp"
             android:layout_height="133dp"
-            android:layout_marginBottom="8dp"
             android:layout_marginEnd="11dp"
             android:layout_marginStart="11dp"
             android:layout_marginTop="2dp"
             android:background="#00d2d3"
             android:visibility="invisible"
-            app:layout_constraintBottom_toTopOf="@+id/StartingStationDetails4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/StartingStationDetails2">
@@ -571,100 +569,30 @@
 
         </android.support.constraint.ConstraintLayout>
 
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/StartingStationDetails4"
-            android:layout_width="362dp"
-            android:layout_height="133dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="14dp"
-            android:layout_marginTop="8dp"
-            android:background="#00d2d3"
-            android:visibility="invisible"
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="367dp"
+            android:layout_height="109dp"
+            android:layout_marginEnd="9dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:background="#f6e58d"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/StartingStationDetails3"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintTop_toBottomOf="@+id/StartingStationDetails3">
 
             <TextView
-                android:id="@+id/ssd4"
-                android:layout_width="362dp"
+                android:layout_width="match_parent"
                 android:layout_height="31dp"
-                android:layout_marginBottom="3dp"
-                android:background="#222f3e"
                 android:fontFamily="casual"
-                android:text="Customer Boarding Station Details"
+                android:text="Passenger Journey Class Details"
                 android:textAlignment="center"
-                android:textColor="#feca57"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/startingStationName4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/startingStationName4"
-                android:layout_width="150dp"
-                android:layout_height="25dp"
-                android:layout_marginBottom="65dp"
-                android:layout_marginEnd="212dp"
-                android:layout_marginTop="3dp"
-                android:fontFamily="sans-serif-smallcaps"
-                android:textAlignment="viewStart"
-                android:textColor="#576574"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ssd4"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
-                android:id="@+id/startingStationCode4"
-                android:layout_width="151dp"
-                android:layout_height="30dp"
-                android:layout_marginBottom="16dp"
-                android:layout_marginEnd="225dp"
-                android:layout_marginTop="19dp"
-                android:fontFamily="sans-serif-smallcaps"
-                android:textAlignment="viewStart"
-                android:textColor="#576574"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/startingStationName4" />
-
-            <TextView
-                android:id="@+id/startingStationNameText4"
-                android:layout_width="204dp"
-                android:layout_height="32dp"
-                android:layout_marginEnd="9dp"
-                android:layout_marginTop="1dp"
-                android:textColor="#222f3e"
-                app:layout_constraintBottom_toTopOf="@+id/startingStationCodeText4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/startingStationName4"
-                app:layout_constraintTop_toBottomOf="@+id/ssd4" />
-
-            <TextView
-                android:id="@+id/startingStationCodeText4"
-                android:layout_width="203dp"
-                android:layout_height="32dp"
-                android:layout_marginBottom="6dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="1dp"
-                android:textColor="#222f3e"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/startingStationCode4"
-                app:layout_constraintTop_toBottomOf="@+id/startingStationNameText4" />
-
-
-        </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
 
 
     </android.support.constraint.ConstraintLayout>
