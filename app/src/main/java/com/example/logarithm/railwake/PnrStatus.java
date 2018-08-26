@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import static com.example.logarithm.railwake.MainActivity.API_KEY;
@@ -19,9 +21,10 @@ import static com.example.logarithm.railwake.MainActivity.API_KEY;
 public class PnrStatus extends AppCompatActivity {
 
     JSONDownloader task;
+    LinearLayout myLinearLayout;
     String json;
     ConstraintLayout constraintLayout,constraintLayout1,constraintLayout2,constraintLayout3,constraintLayout4,constraintLayout5,constraintLayout0;
-    TextView Pnr,dateOfJourney,dateOfJourneyText,chartPreparedText,startingStationName,startingStationCode,startingStationCodeText,startingStationNameText,destStationName,destStationCode,destStationNameText,destStationCodeText,boardingStationName,boardingStationCode,boardingStationNameText,boardingStationCodeText,uptoReservationName,uptoReservationCode,uptoReservationNameText,uptoReservationCodeText,trainNumber,trainName,trainNumberText,trainNameText;
+    TextView Pnr,dateOfJourney,dateOfJourneyText,chartPreparedText,startingStationName,startingStationCode,startingStationCodeText,startingStationNameText,destStationName,destStationCode,destStationNameText,destStationCodeText,boardingStationName,boardingStationCode,boardingStationNameText,boardingStationCodeText,uptoReservationName,uptoReservationCode,uptoReservationNameText,uptoReservationCodeText,trainNumber,trainName,trainNumberText,trainNameText,journeyClassNameText,journeyClassCodeText;
     String PnrNumber,DOJ,fromStationName,trainNumberRes,fromStationCode,toStationName,toStationCode,boardingPointName,boardingPointCode,reservationUptoName,reservationUptoCode,trainNameRes,journeyClassName,journeyClassCode;
     int response_code,total_passenger;
     boolean chartPrepared;
@@ -35,9 +38,8 @@ public class PnrStatus extends AppCompatActivity {
         }
         else {
             PnrNumber = Pnr.getText().toString();
-            try {
-               // json = task.execute("\"https://api.railwayapi.com/v2/pnr-status/pnr/" + PnrNumber + "/apikey/" + API_KEY + "/\"").get();
-                json="{\n" +
+            try { json = task.execute("\"https://api.railwayapi.com/v2/pnr-status/pnr/" + PnrNumber + "/apikey/" + API_KEY + "/\"").get();
+                /*json="{\n" +
                         "  \"response_code\": 200,\n" +
                         "  \"debit\": 3,\n" +
                         "  \"pnr\": \"1234567890\",\n" +
@@ -85,7 +87,7 @@ public class PnrStatus extends AppCompatActivity {
                         "      \"booking_status\": \"RLWL/41/GN\"\n" +
                         "    }\n" +
                         "  ]\n" +
-                        "}";
+                        "}";*/
                 Log.i("PNR STATUS ", json);
                 JSONObject jsonObject=new JSONObject(json);
 
@@ -110,6 +112,27 @@ public class PnrStatus extends AppCompatActivity {
                     JSONObject reservationUpto=jsonObject.getJSONObject("reservation_upto");
                     JSONObject train=jsonObject.getJSONObject("train");
                     JSONObject journeyClass=jsonObject.getJSONObject("journey_class");
+                    journeyClassName=journeyClass.getString("name");
+                    journeyClassCode=journeyClass.getString("code");
+                    JSONArray passengerArray=jsonObject.getJSONArray("passengers");
+                    int noOfPassenger=passengerArray.length();
+                    final TextView[] myTextViews = new TextView[noOfPassenger];
+                    int height=myLinearLayout.getLayoutParams().height;
+                    for(int i=0;i<noOfPassenger;i++){
+                        myLinearLayout.getLayoutParams().height=myLinearLayout.getLayoutParams().height+200;
+                        final TextView rowTextView = new TextView(this);
+                        rowTextView.setBackgroundColor(Color.parseColor("#badc58"));
+                        rowTextView.setTextColor(Color.parseColor("#130f40"));
+                        JSONObject passengerDe=passengerArray.getJSONObject(i);
+                        String passengerNo=passengerDe.getString("no");
+                        String currentStatus=passengerDe.getString("current_status");
+                        String bookingStatus=passengerDe.getString("booking_status");
+                        rowTextView.setText("Paasenger No : " + passengerNo + "\n" + " Current Status  :" +currentStatus + "\n"+ " Booking Status  :" + bookingStatus +"\n" );
+
+                        myLinearLayout.addView(rowTextView);
+                        myTextViews[i] = rowTextView;
+
+                    }
                     dateOfJourneyText.setText(DOJ);
                     fromStationName=fromStation.getString("name");
                     fromStationCode=fromStation.getString("code");
@@ -144,7 +167,7 @@ public class PnrStatus extends AppCompatActivity {
                     dateOfJourney.setVisibility(View.VISIBLE);
                     dateOfJourneyText.setText(DOJ);
 
-
+                    journeyClassNameText.setText(journeyClassName + " - "+journeyClassCode );
                     trainNumber.setText("       Train Number :");
                     trainName.setText("       Train Name :");
                     trainNameText.setText(trainNameRes);
@@ -154,7 +177,7 @@ public class PnrStatus extends AppCompatActivity {
                     constraintLayout2.setVisibility(View.VISIBLE);
                     constraintLayout3.setVisibility(View.VISIBLE);
                     constraintLayout4.setVisibility(View.VISIBLE);
-
+                    myLinearLayout.setVisibility(View.VISIBLE);
 
 
 
@@ -223,6 +246,9 @@ public class PnrStatus extends AppCompatActivity {
         trainNumber=findViewById(R.id.startingStationCode0);
         trainNameText=findViewById(R.id.startingStationNameText0);
         trainNumberText=findViewById(R.id.startingStationCodeText0);
+        journeyClassNameText=findViewById(R.id.journeyClassName);
+        myLinearLayout=findViewById(R.id.myLinearLayout);
+        myLinearLayout.setVisibility(View.INVISIBLE);
 
 
 
