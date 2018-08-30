@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:baselineAligned="false"
+    android:orientation="vertical">
+
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
-            <!-- Content here -->
+            android:orientation="vertical">
+
             <LinearLayout
 
                 android:layout_width="match_parent"
@@ -18,7 +21,7 @@
                 android:clipToPadding="false"
 
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/pnrCardView"
@@ -71,10 +74,73 @@
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
 
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="198dp"
+                android:clipToPadding="false"
+
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/seatAvailabilty"
+                    android:layout_width="348dp"
+                    android:layout_height="184dp"
+                    android:layout_margin="10dp"
+                    android:clickable="true"
+
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:id="@+id/seatAvailabiltyLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="84dp"
+                            android:layout_height="91dp"
+
+
+                            android:padding="10dp"
+                            android:src="@drawable/seat" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Seat Availability"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="10dp"
+                            android:background="@color/lightgray" />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="33dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Checkout the seat availability"
+                            android:textColor="@android:color/holo_orange_light" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+
             </LinearLayout>
         </LinearLayout>
-
-
 
 
     </ScrollView>

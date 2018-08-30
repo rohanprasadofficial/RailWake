@@ -47,7 +47,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/chartPrepared"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.634"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pnrTextBar" />
 
