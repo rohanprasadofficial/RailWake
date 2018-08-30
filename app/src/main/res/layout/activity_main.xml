@@ -3,7 +3,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:baselineAligned="false"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#2d3436">
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -13,6 +14,69 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="198dp"
+                android:clipToPadding="false"
+
+
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/liveTrainStatus"
+                    android:layout_width="348dp"
+                    android:layout_height="184dp"
+                    android:layout_margin="10dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:id="@+id/liveTrainStatusLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="84dp"
+                            android:layout_height="91dp"
+
+
+                            android:padding="10dp"
+                            android:src="@drawable/live" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Live Train  Status"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="10dp"
+                            android:background="@color/lightgray" />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="33dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Checkout live train  running status "
+                            android:textColor="#2d3436" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+
+            </LinearLayout>
 
             <LinearLayout
 
@@ -133,6 +197,132 @@
                             android:gravity="center"
                             android:padding="5dp"
                             android:text="Checkout the seat availability"
+                            android:textColor="#2d3436" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+
+            </LinearLayout>
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="198dp"
+                android:clipToPadding="false"
+
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/trainFareCheck"
+                    android:layout_width="348dp"
+                    android:layout_height="184dp"
+                    android:layout_margin="10dp"
+                    android:clickable="true"
+
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:id="@+id/trainFareCheckLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="84dp"
+                            android:layout_height="91dp"
+
+
+                            android:padding="10dp"
+                            android:src="@drawable/fare" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Fare Check"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="10dp"
+                            android:background="@color/lightgray" />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="33dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Checkout the travel fare"
+                            android:textColor="#2d3436" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+
+            </LinearLayout>
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="198dp"
+                android:clipToPadding="false"
+
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/trainBetweenStation"
+                    android:layout_width="348dp"
+                    android:layout_height="184dp"
+                    android:layout_margin="10dp"
+                    android:clickable="true"
+
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:id="@+id/trainBetweenStationLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="84dp"
+                            android:layout_height="91dp"
+
+
+                            android:padding="10dp"
+                            android:src="@drawable/station" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Train Between  Stations"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="10dp"
+                            android:background="@color/lightgray" />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="33dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Check trains available  between stations"
                             android:textColor="#2d3436" />
 
                     </LinearLayout>
