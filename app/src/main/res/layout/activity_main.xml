@@ -69,7 +69,7 @@
                             android:gravity="center"
                             android:padding="5dp"
                             android:text="Check  your PNR Status"
-                            android:textColor="@android:color/holo_orange_light" />
+                            android:textColor="#2d3436" />
 
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
@@ -133,7 +133,7 @@
                             android:gravity="center"
                             android:padding="5dp"
                             android:text="Checkout the seat availability"
-                            android:textColor="@android:color/holo_orange_light" />
+                            android:textColor="#2d3436" />
 
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
