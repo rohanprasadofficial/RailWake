@@ -1,6 +1,7 @@
 package com.example.logarithm.railwake;
 
 import android.os.AsyncTask;
+import android.view.View;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -9,11 +10,13 @@ import java.net.URL;
 
 class JSONDownloader extends AsyncTask<String, Void, String> {
 
-
     @Override
     protected String doInBackground(String... urls) {
         URL url;
+
         try {
+
+
             HttpURLConnection connection;
             url = new URL(urls[0]);
             connection = (HttpURLConnection) url.openConnection();

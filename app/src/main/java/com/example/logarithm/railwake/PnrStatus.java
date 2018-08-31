@@ -1,13 +1,16 @@
 package com.example.logarithm.railwake;
 
+
 import android.graphics.Color;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,8 +20,8 @@ import org.json.JSONObject;
 
 import static com.example.logarithm.railwake.MainActivity.API_KEY;
 
-
 public class PnrStatus extends AppCompatActivity {
+    public  ProgressBar spinner;
 
     JSONDownloader task;
     LinearLayout myLinearLayout;
@@ -32,68 +35,27 @@ public class PnrStatus extends AppCompatActivity {
 
 
 
+
     public void GetStatus(View view){
+
         if(Pnr.length()<1){
             Toast.makeText(this, "Please Enter PNR Number", Toast.LENGTH_SHORT).show();
         }
         else {
+
+
             PnrNumber = Pnr.getText().toString();
-            try {json = task.execute("https://api.railwayapi.com/v2/pnr-status/pnr/"+PnrNumber +"/apikey/"+API_KEY+"/").get();
-              /*  json="{\n" +
-                        "  \"response_code\": 200,\n" +
-                        "  \"debit\": 3,\n" +
-                        "  \"pnr\": \"1234567890\",\n" +
-                        "  \"doj\": \"25-6-2017\",\n" +
-                        "  \"total_passengers\": 3,\n" +
-                        "  \"chart_prepared\": true,\n" +
-                        "  \"from_station\": {\n" +
-                        "    \"name\": \"Kopargaon\",\n" +
-                        "    \"code\": \"KPG\"\n" +
-                        "  },\n" +
-                        "  \"to_station\": {\n" +
-                        "    \"name\": \"Hazrat Nizamuddin\",\n" +
-                        "    \"code\": \"NZM\"\n" +
-                        "  },\n" +
-                        "  \"boarding_point\": {\n" +
-                        "    \"name\": \"Kopargaon\",\n" +
-                        "    \"code\": \"KPG\"\n" +
-                        "  },\n" +
-                        "  \"reservation_upto\": {\n" +
-                        "    \"name\": \"Hazrat Nizamuddin\",\n" +
-                        "    \"code\": \"NZM\"\n" +
-                        "  },\n" +
-                        "  \"train\": {\n" +
-                        "    \"name\": \"GOA EXPRESS\",\n" +
-                        "    \"number\": \"12779\"\n" +
-                        "  },\n" +
-                        "  \"journey_class\": {\n" +
-                        "    \"name\": \"SLEEPER CLASS\",\n" +
-                        "    \"code\": \"SL\"\n" +
-                        "  },\n" +
-                        "  \"passengers\": [\n" +
-                        "    {\n" +
-                        "      \"no\": 1,\n" +
-                        "      \"current_status\": \"RLWL/11\",\n" +
-                        "      \"booking_status\": \"RLWL/39/GN\"\n" +
-                        "    },\n" +
-                        "    {\n" +
-                        "      \"no\": 2,\n" +
-                        "      \"current_status\": \"RLWL/12\",\n" +
-                        "      \"booking_status\": \"RLWL/40/GN\"\n" +
-                        "    },\n" +
-                        "    {\n" +
-                        "      \"no\": 3,\n" +
-                        "      \"current_status\": \"RLWL/13\",\n" +
-                        "      \"booking_status\": \"RLWL/41/GN\"\n" +
-                        "    }\n" +
-                        "  ]\n" +
-                        "}";*/
+            try {
+
+                json = task.execute("https://api.railwayapi.com/v2/pnr-status/pnr/"+PnrNumber +"/apikey/"+API_KEY+"/").get();
                 Log.i("PNR STATUS ", json);
                 JSONObject jsonObject=new JSONObject(json);
 
                 response_code=jsonObject.getInt("response_code");
                 if(response_code==200){
                     //Code for Parsing Details
+
+
                     chartPreparedText.setVisibility(View.VISIBLE);
                     chartPrepared=jsonObject.getBoolean("chart_prepared");
                     if(chartPrepared){
@@ -185,7 +147,7 @@ public class PnrStatus extends AppCompatActivity {
 
 
 
-                    }
+                }
                 else if(response_code==221){
                     Toast.makeText(this, "Invalid PNR", Toast.LENGTH_SHORT).show();
                 }
@@ -247,6 +209,7 @@ public class PnrStatus extends AppCompatActivity {
         journeyClassNameText=findViewById(R.id.journeyClassName);
         myLinearLayout=findViewById(R.id.myLinearLayout);
         myLinearLayout.setVisibility(View.INVISIBLE);
+
 
 
 
