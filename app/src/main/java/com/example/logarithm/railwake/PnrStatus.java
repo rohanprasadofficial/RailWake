@@ -38,7 +38,7 @@ public class PnrStatus extends AppCompatActivity {
         }
         else {
             PnrNumber = Pnr.getText().toString();
-            try {json = task.execute("\"https://api.railwayapi.com/v2/pnr-status/pnr/" + PnrNumber + "/apikey/" + API_KEY + "/\"").get();
+            try {json = task.execute("https://api.railwayapi.com/v2/pnr-status/pnr/"+PnrNumber +"/apikey/"+API_KEY+"/").get();
               /*  json="{\n" +
                         "  \"response_code\": 200,\n" +
                         "  \"debit\": 3,\n" +
