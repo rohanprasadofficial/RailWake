@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
             task = new JSONDownloader();
-            //json = task.execute("https://api.railwayapi.com/v2/name-number/train/22640/apikey/"+API_KEY+"/\n" +
-            //       "\n").get();
 
         pnrCardView=findViewById(R.id.pnrCardView);
         pnrCardView.setOnClickListener(new View.OnClickListener() {
