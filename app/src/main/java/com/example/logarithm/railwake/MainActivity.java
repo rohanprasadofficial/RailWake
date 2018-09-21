@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     static final String  API_KEY = "y5jg5qw00g";
     JSONDownloader task;
     String  json=null;
-    CardView pnrCardView;
+    CardView pnrCardView,pnrCardView4;
 
 
     void pnrStatus(View view){
@@ -44,6 +44,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+        pnrCardView4=findViewById(R.id.pnrCardView4);
+        pnrCardView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               startActivity(new Intent(getApplicationContext(),TrainBetweenStation.class));
+            }
+        });
 
 
 

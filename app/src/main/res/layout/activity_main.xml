@@ -277,7 +277,7 @@
                 android:orientation="vertical">
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/trainBetweenStation"
+                    android:id="@+id/pnrCardView4"
                     android:layout_width="348dp"
                     android:layout_height="184dp"
                     android:layout_margin="10dp"

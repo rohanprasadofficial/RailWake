@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#2d3436"
+    android:baselineAligned="false"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:text="Search Trains Between Stations"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/sourceStation"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_margin="10dp"
+        android:fontFamily="monospace"
+        android:hint="Enter Source Station"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light" />
+
+
+    <AutoCompleteTextView
+        android:id="@+id/DestinationStation"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_margin="10dp"
+        android:fontFamily="monospace"
+        android:hint="Enter Destination Station"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light" />
+
+
+
+
+</LinearLayout>
