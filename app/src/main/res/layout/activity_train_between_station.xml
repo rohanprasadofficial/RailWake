@@ -41,7 +41,29 @@
         android:textAlignment="center"
         android:textColor="@android:color/background_light" />
 
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="#d4d4d4"
+        android:hint="Select Journey Date"
+        android:padding="15dp"
+        android:textAlignment="center"
+        android:textColor="#897"
+        android:textColorHint="#090"
+        android:textSize="20sp" />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="10dp"
+        android:onClick="DateShower"
+        android:text="Show Trains" />
 
 
 </LinearLayout>
+

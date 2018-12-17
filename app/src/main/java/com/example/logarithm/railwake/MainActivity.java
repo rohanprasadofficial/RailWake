@@ -17,7 +17,7 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
-    static final String  API_KEY = "y5jg5qw00g";
+    static final String  API_KEY = "YOUR_API_KEY";
     JSONDownloader task;
     String  json=null;
     CardView pnrCardView,pnrCardView4;

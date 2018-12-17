@@ -1,71 +1,78 @@
 package com.example.logarithm.railwake;
 
+
+import android.app.DatePickerDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Toast;
+import android.widget.DatePicker;
+import android.widget.EditText;
 
-import static com.example.logarithm.railwake.MainActivity.API_KEY;
-
+import java.util.Calendar;
 
 
 public class TrainBetweenStation extends AppCompatActivity {
 
     JSONDownloader task;
-    String listofStations;
     AutoCompleteTextView sourceStation,destinationStation;
-    ArrayAdapter<String> adapter;
-    private static final String[]  Stations={"Hello"};
+    EditText date;
+    DatePickerDialog datePickerDialog;
+    private int Year,Month,Day;
+
+
+    public void DateShower(View view)
+    {
+        Log.i("Day",String.valueOf(Day));
+        Log.i("Month",String.valueOf(Month+1));
+        Log.i("Year",String.valueOf(Year));
+
+    }
+
     @Override
-
-
-
-
-
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_train_between_station);
         task=new JSONDownloader();
         sourceStation =  findViewById(R.id.sourceStation);
         destinationStation=findViewById(R.id.DestinationStation);
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, Stations);
-        sourceStation.setAdapter(adapter);
-        sourceStation.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                Log.i("before text chnaged",s.toString());
+        date = (EditText) findViewById(R.id.date);
+        // perform click event on edit text
+        date.setOnClickListener(new View.OnClickListener() {
+                @Override
+            public void onClick(View v) {
+                // calender class's instance and get current date , month and year from calender
+                final Calendar c = Calendar.getInstance();
+                int mYear = c.get(Calendar.YEAR); // current year
+                int mMonth = c.get(Calendar.MONTH); // current month
+                int mDay = c.get(Calendar.DAY_OF_MONTH); // current day
+                // date picker dialog
+                datePickerDialog = new DatePickerDialog(TrainBetweenStation.this,
+                        new DatePickerDialog.OnDateSetListener() {
 
-            }
+                            @Override
+                            public void onDateSet(DatePicker view, int year,
+                                                  int monthOfYear, int dayOfMonth) {
+                                // set day of month , month and year value in the edit text
+                                Log.i("Date",String.valueOf(dayOfMonth));
+                                date.setText(dayOfMonth + "/"
+                                        + (monthOfYear + 1) + "/" + year);
 
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                                Year=year;
+                                Month=monthOfYear;
+                                Day=dayOfMonth;
 
-            }
+                            }
+                        }, mYear, mMonth, mDay);
+                datePickerDialog.show();
 
-            @Override
-            public void afterTextChanged(Editable s) {
-                Log.i("afert text changed",s.toString());
-                try {
-                    listofStations =task.execute("https://api.railwayapi.com/v2/suggest-station/name/"+s.toString()+"/apikey/y5jg5qw00g/").get();
-                    Log.i("Stations",listofStations);
-
-                    Log.i("Ontext changed",s.toString());
-
-                }catch (Exception e){
-                    Toast.makeText(TrainBetweenStation.this, "Something Went Wrong!", Toast.LENGTH_SHORT).show();
-                    e.printStackTrace();
                 }
 
-            }
         });
 
 
+    }}
 
 
-    }
-}
+
