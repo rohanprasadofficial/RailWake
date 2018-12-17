@@ -33,3 +33,6 @@ Railwake is an android application for all needs for Indian Railways be it PNR S
 1. Google Fonts - Fonts <br/>
 2. Flaticon - Logos & Icons <br/>
 3. RailwayAPI - API 
+
+
+**Made with &#10084; by Logarithm**
